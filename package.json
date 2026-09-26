@@ -1,0 +1,24 @@
+{
+  "name": "inquilab-desktop",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:frontend": "npm run build",
+    "tauri:backend": "powershell -NoProfile -ExecutionPolicy Bypass -File .\\build_backend.ps1",
+    "tauri:compile": "cargo build --release --manifest-path src-tauri/Cargo.toml",
+    "tauri:bundle": "tauri bundle",
+    "tauri:build": "npm run tauri:frontend && npm run tauri:backend && npm run tauri:compile && npm run tauri:bundle"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.5.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.5.0",
+    "vite": "^7.1.0"
+  }
+}

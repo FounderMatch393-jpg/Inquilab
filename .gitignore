@@ -1,0 +1,13 @@
+.venv/
+node_modules/
+build/
+dist/
+src-tauri/target/
+__pycache__/
+.pytest_cache/
+.pytest-media-output/
+*.py[cod]
+inquilab_data/
+src-tauri/resources/inquilab-backend.exe
+.env
+.env.*

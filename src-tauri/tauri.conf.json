@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Inquilab",
+  "version": "0.1.0",
+  "identifier": "com.inquilab.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Inquilab",
+        "width": 1100,
+        "height": 800,
+        "minWidth": 680,
+        "minHeight": 620,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "msi"
+    ],
+    "icon": [
+      "icons/icon.ico"
+    ],
+    "resources": [
+      "resources/inquilab-backend.exe",
+      "../desktop_backend.py",
+      "../inquilab_config.py",
+      "../main.py",
+      "../media_generator.py",
+      "../memory_engine_simple.py",
+      "../ollama_connector.py",
+      "../sandbox_engine.py",
+      "../tools"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "embedBootstrapper"
+      }
+    }
+  }
+}

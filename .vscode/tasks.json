@@ -1,0 +1,65 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build Inquilab Tauri Release",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"tauri:build"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Clear Stale Tauri Build Processes",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"Get-Process cargo,rustc,tauri,inquilab-desktop -ErrorAction SilentlyContinue | Stop-Process -Force"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build Inquilab Tauri Release Final",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"tauri:build"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Build Inquilab Tauri Release",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"tauri:build"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Inquilab Desktop",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"tauri:build"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}
